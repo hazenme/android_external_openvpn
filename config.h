@@ -1,14 +1,11 @@
 /* config.h.  Generated from config.h.in by configure.  */
 /* config.h.in.  Generated from configure.ac by autoheader.  */
 
-/* Enable deferred authentication */
-#define CONFIGURE_DEF_AUTH 1
+/* Configuration settings */
+#define CONFIGURE_DEFINES "enable_crypto=yes enable_debug=yes enable_def_auth=yes enable_dlopen=unknown enable_dlopen_self=unknown enable_dlopen_self_static=unknown enable_fast_install=yes enable_fragment=yes enable_http_proxy=yes enable_iproute2=no enable_libtool_lock=yes enable_lzo=yes enable_lzo_stub=no enable_management=yes enable_multi=yes enable_multihome=yes enable_pam_dlopen=no enable_password_save=no enable_pedantic=no enable_pf=yes enable_pkcs11=no enable_plugin_auth_pam=yes enable_plugin_down_root=yes enable_plugins=yes enable_port_share=yes enable_selinux=no enable_server=yes enable_shared=yes enable_shared_with_static_runtimes=no enable_small=no enable_socks=yes enable_ssl=yes enable_static=yes enable_strict=no enable_strict_options=no enable_systemd=no enable_win32_dll=yes enable_x509_alt_username=no with_crypto_library=openssl with_gnu_ld=yes with_mem_check=no with_plugindir='$(libdir)/openvpn/plugins' with_sysroot=no"
 
-/* Enable internal packet filter */
-#define CONFIGURE_PF 1
-
-/* enable iproute2 support */
-#define CONFIG_FEATURE_IPROUTE 1
+/* special build string */
+/* #undef CONFIGURE_SPECIAL_BUILD */
 
 /* Use memory debugging function in OpenSSL */
 /* #undef CRYPTO_MDEBUG */
@@ -25,17 +22,38 @@
 /* Enable client/server capability */
 #define ENABLE_CLIENT_SERVER 1
 
+/* Enable crypto library */
+#define ENABLE_CRYPTO 1
+
+/* Use OpenSSL library */
+#define ENABLE_CRYPTO_OPENSSL 1
+
+/* Use PolarSSL library */
+/* #undef ENABLE_CRYPTO_POLARSSL */
+
 /* Enable debugging support */
 #define ENABLE_DEBUG 1
 
-/* Enable support for the eurephia plug-in */
-#define ENABLE_EUREPHIA 1
+/* Enable deferred authentication */
+#define ENABLE_DEF_AUTH 1
+
+/* We have persist tun capability */
+#define ENABLE_FEATURE_TUN_PERSIST 1
 
 /* Enable internal fragmentation support */
 #define ENABLE_FRAGMENT 1
 
 /* Enable HTTP proxy support */
 #define ENABLE_HTTP_PROXY 1
+
+/* enable iproute2 support */
+/* #undef ENABLE_IPROUTE */
+
+/* Enable LZO compression library */
+#define ENABLE_LZO 1
+
+/* Enable LZO stub capability */
+/* #undef ENABLE_LZO_STUB */
 
 /* Enable management server capability */
 #define ENABLE_MANAGEMENT 1
@@ -44,10 +62,22 @@
 #define ENABLE_MULTIHOME 1
 
 /* Allow --askpass and --auth-user-pass passwords to be read from a file */
-#define ENABLE_PASSWORD_SAVE 1
+/* #undef ENABLE_PASSWORD_SAVE */
+
+/* Enable internal packet filter */
+#define ENABLE_PF 1
+
+/* Enable PKCS11 */
+/* #undef ENABLE_PKCS11 */
+
+/* Enable plug-in support */
+#define ENABLE_PLUGIN 1
 
 /* Enable TCP Server port sharing */
 #define ENABLE_PORT_SHARE 1
+
+/* SELinux support */
+/* #undef ENABLE_SELINUX */
 
 /* Enable smaller executable size */
 /* #undef ENABLE_SMALL */
@@ -55,14 +85,29 @@
 /* Enable Socks proxy support */
 #define ENABLE_SOCKS 1
 
+/* Enable ssl library */
+#define ENABLE_SSL 1
+
+/* Enable strict options check between peers */
+/* #undef ENABLE_STRICT_OPTIONS_CHECK */
+
+/* Enable systemd support */
+/* #undef ENABLE_SYSTEMD */
+
 /* Enable --x509-username-field feature */
 /* #undef ENABLE_X509ALTUSERNAME */
 
 /* Define to 1 if you have the `accept' function. */
 #define HAVE_ACCEPT 1
 
+/* Define to 1 if you have the `access' function. */
+#define HAVE_ACCESS 1
+
 /* Define to 1 if you have the <arpa/inet.h> header file. */
 #define HAVE_ARPA_INET_H 1
+
+/* Define to 1 if you have the `basename' function. */
+#define HAVE_BASENAME 1
 
 /* Define to 1 if you have the `bind' function. */
 #define HAVE_BIND 1
@@ -78,6 +123,9 @@
 
 /* struct cmsghdr needed for extended socket error support */
 #define HAVE_CMSGHDR 1
+
+/* extra version available in config-version.h */
+#define HAVE_CONFIG_VERSION_H 1
 
 /* Define to 1 if you have the `connect' function. */
 #define HAVE_CONNECT 1
@@ -97,6 +145,43 @@
 /* Define to 1 if you have the `daemon' function. */
 #define HAVE_DAEMON 1
 
+/* Define to 1 if you have the declaration of `SIGHUP', and to 0 if you don't.
+   */
+#define HAVE_DECL_SIGHUP 1
+
+/* Define to 1 if you have the declaration of `SIGINT', and to 0 if you don't.
+   */
+#define HAVE_DECL_SIGINT 1
+
+/* Define to 1 if you have the declaration of `SIGTERM', and to 0 if you
+   don't. */
+#define HAVE_DECL_SIGTERM 1
+
+/* Define to 1 if you have the declaration of `SIGUSR1', and to 0 if you
+   don't. */
+#define HAVE_DECL_SIGUSR1 1
+
+/* Define to 1 if you have the declaration of `SIGUSR2', and to 0 if you
+   don't. */
+#define HAVE_DECL_SIGUSR2 1
+
+/* Define to 1 if you have the declaration of `SO_MARK', and to 0 if you
+   don't. */
+#define HAVE_DECL_SO_MARK 1
+
+/* Define to 1 if you have the declaration of `TUNSETPERSIST', and to 0 if you
+   don't. */
+#define HAVE_DECL_TUNSETPERSIST 1
+
+/* Define to 1 if you have the <direct.h> header file. */
+/* #undef HAVE_DIRECT_H */
+
+/* Define to 1 if you have the `dirname' function. */
+#define HAVE_DIRNAME 1
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#define HAVE_DLFCN_H 1
+
 /* Define to 1 if you have the `dup' function. */
 #define HAVE_DUP 1
 
@@ -112,7 +197,7 @@
 /* Define to 1 if you have the `ENGINE_register_all_complete' function. */
 #define HAVE_ENGINE_REGISTER_ALL_COMPLETE 1
 
-/* epoll_create function is defined */
+/* Define to 1 if you have the `epoll_create' function. */
 #define HAVE_EPOLL_CREATE 1
 
 /* Define to 1 if you have the <errno.h> header file. */
@@ -175,8 +260,17 @@
 /* Define to 1 if you have the `inet_ntoa' function. */
 #define HAVE_INET_NTOA 1
 
+/* Define to 1 if you have the `inet_ntop' function. */
+#define HAVE_INET_NTOP 1
+
+/* Define to 1 if you have the `inet_pton' function. */
+#define HAVE_INET_PTON 1
+
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
+
+/* Define to 1 if the system has the type `in_addr_t'. */
+#define HAVE_IN_ADDR_T 1
 
 /* struct in_pktinfo needed for IP_PKTINFO support */
 #define HAVE_IN_PKTINFO 1
@@ -184,11 +278,20 @@
 /* struct iovec needed for IPv6 support */
 #define HAVE_IOVEC 1
 
+/* Define to 1 if you have the <io.h> header file. */
+/* #undef HAVE_IO_H */
+
 /* struct iphdr needed for IPv6 support */
 #define HAVE_IPHDR 1
 
-/* Define to 1 if you have the <linux/errqueue.h> header file. */
-#define HAVE_LINUX_ERRQUEUE_H 1
+/* Define to 1 if you have the <libgen.h> header file. */
+#define HAVE_LIBGEN_H 1
+
+/* Define to 1 if you have the `polarssl' library (-lpolarssl). */
+/* #undef HAVE_LIBPOLARSSL */
+
+/* Define to 1 if you have the <limits.h> header file. */
+#define HAVE_LIMITS_H 1
 
 /* Define to 1 if you have the <linux/if_tun.h> header file. */
 #define HAVE_LINUX_IF_TUN_H 1
@@ -201,6 +304,18 @@
 
 /* Define to 1 if you have the `listen' function. */
 #define HAVE_LISTEN 1
+
+/* Define to 1 if you have the <lzo1x.h> header file. */
+/* #undef HAVE_LZO1X_H */
+
+/* Define to 1 if you have the <lzoutil.h> header file. */
+/* #undef HAVE_LZOUTIL_H */
+
+/* Define to 1 if you have the <lzo/lzo1x.h> header file. */
+#define HAVE_LZO_LZO1X_H 1
+
+/* Define to 1 if you have the <lzo/lzoutil.h> header file. */
+#define HAVE_LZO_LZOUTIL_H 1
 
 /* Define to 1 if you have the <memory.h> header file. */
 #define HAVE_MEMORY_H 1
@@ -238,6 +353,9 @@
 /* Define to 1 if you have the <net/if_tun.h> header file. */
 /* #undef HAVE_NET_IF_TUN_H */
 
+/* Define to 1 if you have the <net/if_utun.h> header file. */
+/* #undef HAVE_NET_IF_UTUN_H */
+
 /* Define to 1 if you have the <net/tun/if_tun.h> header file. */
 /* #undef HAVE_NET_TUN_IF_TUN_H */
 
@@ -247,8 +365,8 @@
 /* Define to 1 if you have the `openlog' function. */
 #define HAVE_OPENLOG 1
 
-/* Define to 1 if you have the <openssl/engine.h> header file. */
-#define HAVE_OPENSSL_ENGINE_H 1
+/* Use crypto library */
+#define HAVE_OPENSSL_ENGINE 1
 
 /* Define to 1 if you have the `poll' function. */
 #define HAVE_POLL 1
@@ -274,8 +392,8 @@
 /* Define to 1 if you have the <resolv.h> header file. */
 #define HAVE_RESOLV_H 1
 
-/* Indicates if res_init is available */
-#define HAVE_RES_INIT 1
+/* Define to 1 if you have the `res_init' function. */
+/* #undef HAVE_RES_INIT */
 
 /* Define to 1 if you have the `select' function. */
 #define HAVE_SELECT 1
@@ -288,9 +406,6 @@
 
 /* Define to 1 if you have the `sendto' function. */
 #define HAVE_SENDTO 1
-
-/* SELinux support */
-/* #undef HAVE_SETCON */
 
 /* Define to 1 if you have the `setgid' function. */
 #define HAVE_SETGID 1
@@ -314,13 +429,16 @@
 #define HAVE_SOCKET 1
 
 /* struct sock_extended_err needed for extended socket error support */
-#define HAVE_SOCK_EXTENDED_ERR 1
+/* #undef HAVE_SOCK_EXTENDED_ERR */
 
 /* Define to 1 if you have the `stat' function. */
 #define HAVE_STAT 1
 
 /* Define to 1 if you have the <stdarg.h> header file. */
 #define HAVE_STDARG_H 1
+
+/* Define to 1 if you have the <stdbool.h> header file. */
+#define HAVE_STDBOOL_H 1
 
 /* Define to 1 if you have the <stdint.h> header file. */
 #define HAVE_STDINT_H 1
@@ -364,6 +482,9 @@
 /* Define to 1 if you have the <sys/ioctl.h> header file. */
 #define HAVE_SYS_IOCTL_H 1
 
+/* Define to 1 if you have the <sys/kern_control.h> header file. */
+/* #undef HAVE_SYS_KERN_CONTROL_H */
+
 /* Define to 1 if you have the <sys/mman.h> header file. */
 #define HAVE_SYS_MMAN_H 1
 
@@ -386,19 +507,22 @@
 #define HAVE_SYS_TYPES_H 1
 
 /* Define to 1 if you have the <sys/uio.h> header file. */
-/* #define HAVE_SYS_UIO_H 1 */
+#define HAVE_SYS_UIO_H 1
 
 /* Define to 1 if you have the <sys/un.h> header file. */
 #define HAVE_SYS_UN_H 1
 
-/* Define to 1 if you have <sys/wait.h> that is POSIX.1 compatible. */
+/* Define to 1 if you have the <sys/wait.h> header file. */
 #define HAVE_SYS_WAIT_H 1
+
+/* Define to 1 if you have the <tap-windows.h> header file. */
+/* #undef HAVE_TAP_WINDOWS_H */
 
 /* Define to 1 if you have the `time' function. */
 #define HAVE_TIME 1
 
-/* struct tun_pi needed for IPv6 support */
-#define HAVE_TUN_PI 1
+/* Define to 1 if you have the <time.h> header file. */
+#define HAVE_TIME_H 1
 
 /* Define to 1 if you have the `umask' function. */
 #define HAVE_UMASK 1
@@ -418,6 +542,12 @@
 /* Define to 1 if you have the `vsnprintf' function. */
 #define HAVE_VSNPRINTF 1
 
+/* Define to 1 if you have the <windows.h> header file. */
+/* #undef HAVE_WINDOWS_H */
+
+/* Define to 1 if you have the <winsock2.h> header file. */
+/* #undef HAVE_WINSOCK2_H */
+
 /* Define to 1 if `fork' works. */
 #define HAVE_WORKING_FORK 1
 
@@ -427,20 +557,21 @@
 /* Define to 1 if you have the `writev' function. */
 #define HAVE_WRITEV 1
 
+/* Define to 1 if you have the <ws2tcpip.h> header file. */
+/* #undef HAVE_WS2TCPIP_H */
+
 /* Path to ifconfig tool */
-#define IFCONFIG_PATH "/system/bin/ifconfig"
+#define IFCONFIG_PATH "/sbin/ifconfig"
 
 /* Path to iproute tool */
-#define IPROUTE_PATH "/system/bin/ip"
+#define IPROUTE_PATH "/sbin/ip"
 
-/* Use lzo/ directory prefix for LZO header files (for LZO 2.0) */
-#define LZO_HEADER_DIR 1
+/* Define to the sub-directory in which libtool stores uninstalled libraries.
+   */
+#define LT_OBJDIR ".libs/"
 
-/* LZO version number */
-#define LZO_VERSION_NUM "2"
-
-/* Path to netstat tool */
-#define NETSTAT_PATH "/system/bin/netstat"
+/* Version in windows resource format */
+#define OPENVPN_VERSION_RESOURCE 2,3,3,0
 
 /* Name of package */
 #define PACKAGE "openvpn"
@@ -463,35 +594,53 @@
 /* Define to the version of this package. */
 #define PACKAGE_VERSION "2.3.3"
 
+/* Path separator */
+#define PATH_SEPARATOR '/'
+
+/* Path separator */
+#define PATH_SEPARATOR_STR "/"
+
 /* Define as the return type of signal handlers (`int' or `void'). */
 #define RETSIGTYPE void
 
 /* Path to route tool */
-#define ROUTE_PATH "/system/bin/route"
+#define ROUTE_PATH "/sbin/route"
+
+/* SIGHUP replacement */
+/* #undef SIGHUP */
+
+/* SIGINT replacement */
+/* #undef SIGINT */
+
+/* SIGTERM replacement */
+/* #undef SIGTERM */
+
+/* SIGUSR1 replacement */
+/* #undef SIGUSR1 */
+
+/* SIGUSR2 replacement */
+/* #undef SIGUSR2 */
 
 /* The size of `unsigned int', as computed by sizeof. */
 #define SIZEOF_UNSIGNED_INT 4
 
 /* The size of `unsigned long', as computed by sizeof. */
-#define SIZEOF_UNSIGNED_LONG 4
+#define SIZEOF_UNSIGNED_LONG 8
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
 
-/* Enable strict options check between peers */
-/* #undef STRICT_OPTIONS_CHECK */
+/* The tap-windows id */
+#define TAP_WIN_COMPONENT_ID "tap0901"
 
-/* The TAP-Win32 id defined in tap-win32/SOURCES */
-#define TAP_ID "tap0901"
+/* The tap-windows version number is required for OpenVPN */
+#define TAP_WIN_MIN_MAJOR 9
 
-/* The TAP-Win32 version number is defined in tap-win32/SOURCES */
-#define TAP_WIN32_MIN_MAJOR 9
-
-/* The TAP-Win32 version number is defined in tap-win32/SOURCES */
-#define TAP_WIN32_MIN_MINOR 9
+/* The tap-windows version number is required for OpenVPN */
+#define TAP_WIN_MIN_MINOR 9
 
 /* A string representing our host */
-#define TARGET_ALIAS "i686-pc-linux-gnu"
+#define TARGET_ALIAS "x86_64-unknown-linux-gnu"
 
 /* Are we running on Mac OS X? */
 /* #undef TARGET_DARWIN */
@@ -505,11 +654,17 @@
 /* Are we running on Linux? */
 /* #undef TARGET_LINUX */
 
+/* Are we running on Android? */
+#define TARGET_ANDROID 1
+
 /* Are we running NetBSD? */
 /* #undef TARGET_NETBSD */
 
 /* Are we running on OpenBSD? */
 /* #undef TARGET_OPENBSD */
+
+/* Target prefix */
+#define TARGET_PREFIX "L"
 
 /* Are we running on Solaris? */
 /* #undef TARGET_SOLARIS */
@@ -517,29 +672,8 @@
 /* Are we running WIN32? */
 /* #undef TARGET_WIN32 */
 
-/* Are we running on Android? */
-#define TARGET_ANDROID 1
-
-/* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
-#define TIME_WITH_SYS_TIME 1
-
-/* Use OpenSSL crypto library */
-#define USE_CRYPTO 1
-
-/* Use libdl for dynamic library loading */
-#define USE_LIBDL 1
-
-/* Use LoadLibrary to load DLLs on Windows */
-/* #undef USE_LOAD_LIBRARY */
-
-/* Use LZO compression library */
-#define USE_LZO 1
-
-/* Enable PKCS11 capability */
-/* #undef USE_PKCS11 */
-
-/* Use OpenSSL SSL library */
-#define USE_SSL 1
+/* dlopen libpam */
+/* #undef USE_PAM_DLOPEN */
 
 /* Enable extensions on AIX 3, Interix.  */
 #ifndef _ALL_SOURCE
@@ -579,13 +713,28 @@
 /* Define to 1 if you need to in order for `stat' and other things to work. */
 /* #undef _POSIX_SOURCE */
 
+/* Define for Solaris 2.5.1 so the uint32_t typedef from <sys/synch.h>,
+   <pthread.h>, or <semaphore.h> is not used. If the typedef were allowed, the
+   #define below would cause a syntax error. */
+/* #undef _UINT32_T */
+
+/* Define for Solaris 2.5.1 so the uint64_t typedef from <sys/synch.h>,
+   <pthread.h>, or <semaphore.h> is not used. If the typedef were allowed, the
+   #define below would cause a syntax error. */
+/* #undef _UINT64_T */
+
+/* Define for Solaris 2.5.1 so the uint8_t typedef from <sys/synch.h>,
+   <pthread.h>, or <semaphore.h> is not used. If the typedef were allowed, the
+   #define below would cause a syntax error. */
+/* #undef _UINT8_T */
+
 /* Define to empty if `const' does not conform to ANSI C. */
 /* #undef const */
 
 /* Define to `int' if <sys/types.h> doesn't define. */
 /* #undef gid_t */
 
-/* Some systems don't define in_addr_t */
+/* Workaround missing in_addr_t */
 /* #undef in_addr_t */
 
 /* Define to `__inline__' or `__inline' if that's what the C compiler
@@ -593,6 +742,22 @@
 #ifndef __cplusplus
 /* #undef inline */
 #endif
+
+/* Define to the type of a signed integer type of width exactly 16 bits if
+   such a type exists and the standard includes do not define it. */
+/* #undef int16_t */
+
+/* Define to the type of a signed integer type of width exactly 32 bits if
+   such a type exists and the standard includes do not define it. */
+/* #undef int32_t */
+
+/* Define to the type of a signed integer type of width exactly 64 bits if
+   such a type exists and the standard includes do not define it. */
+/* #undef int64_t */
+
+/* Define to the type of a signed integer type of width exactly 8 bits if such
+   a type exists and the standard includes do not define it. */
+/* #undef int8_t */
 
 /* Define to `long int' if <sys/types.h> does not define. */
 /* #undef off_t */
@@ -609,13 +774,20 @@
 /* Define to `int' if <sys/types.h> doesn't define. */
 /* #undef uid_t */
 
-/* 16-bit unsigned type */
+/* Define to the type of an unsigned integer type of width exactly 16 bits if
+   such a type exists and the standard includes do not define it. */
 /* #undef uint16_t */
 
-/* 32-bit unsigned type */
+/* Define to the type of an unsigned integer type of width exactly 32 bits if
+   such a type exists and the standard includes do not define it. */
 /* #undef uint32_t */
 
-/* 8-bit unsigned type */
+/* Define to the type of an unsigned integer type of width exactly 64 bits if
+   such a type exists and the standard includes do not define it. */
+/* #undef uint64_t */
+
+/* Define to the type of an unsigned integer type of width exactly 8 bits if
+   such a type exists and the standard includes do not define it. */
 /* #undef uint8_t */
 
 /* Define as `fork' if `vfork' does not work. */
