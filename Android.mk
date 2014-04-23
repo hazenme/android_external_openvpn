@@ -7,72 +7,71 @@ LOCAL_PATH:= $(call my-dir)
 # in tun.c replace /dev/net/tun with /dev/tun
 
 common_SRC_FILES:= \
-	base64.c base64.h \
-	basic.h \
-	buffer.c buffer.h \
-	circ_list.h \
-	common.h \
-	crypto.c crypto.h \
-	dhcp.c dhcp.h \
-	errlevel.h \
-	error.c error.h \
-	event.c event.h \
-	fdmisc.c fdmisc.h \
-	forward.c forward.h forward-inline.h \
-	fragment.c fragment.h \
-	gremlin.c gremlin.h \
-	helper.c helper.h \
-	httpdigest.c httpdigest.h \
-	lladdr.c lladdr.h \
-	init.c init.h \
-	integer.h \
-	interval.c interval.h \
-	list.c list.h \
-	lzo.c lzo.h \
-	manage.c manage.h \
-	mbuf.c mbuf.h \
-	memdbg.h \
-	misc.c misc.h \
-	mroute.c mroute.h \
-	mss.c mss.h \
-	mtcp.c mtcp.h \
-	mtu.c mtu.h \
-	mudp.c mudp.h \
-	multi.c multi.h \
-	ntlm.c ntlm.h \
-	occ.c occ.h occ-inline.h \
-	pkcs11.c pkcs11.h \
-	openvpn.c openvpn.h \
-	openvpn-plugin.h \
-	options.c options.h \
-	otime.c otime.h \
-	packet_id.c packet_id.h \
-	perf.c perf.h \
-	pf.c pf.h pf-inline.h \
-	ping.c ping.h ping-inline.h \
-	plugin.c plugin.h \
-	pool.c pool.h \
-	proto.c proto.h \
-	proxy.c proxy.h \
-	ieproxy.h ieproxy.c \
-	ps.c ps.h \
-	push.c push.h \
-	pushlist.h \
-	reliable.c reliable.h \
-	route.c route.h \
-	schedule.c schedule.h \
-	session_id.c session_id.h \
-	shaper.c shaper.h \
-	sig.c sig.h \
-	socket.c socket.h \
-	socks.c socks.h \
-	ssl.c ssl.h \
-	status.c status.h \
-	syshead.h \
-	tun.c tun.h \
-	win32.h win32.c \
-	cryptoapi.h cryptoapi.c \
-	missing.c \
+	src/openvpn/base64.c src/openvpn/base64.h \
+	src/openvpn/basic.h \
+	src/openvpn/buffer.c src/openvpn/buffer.h \
+	src/openvpn/circ_list.h \
+	src/openvpn/common.h \
+	src/openvpn/crypto.c src/openvpn/crypto.h \
+	src/openvpn/dhcp.c src/openvpn/dhcp.h \
+	src/openvpn/errlevel.h \
+	src/openvpn/error.c src/openvpn/error.h \
+	src/openvpn/event.c src/openvpn/event.h \
+	src/openvpn/fdmisc.c src/openvpn/fdmisc.h \
+	src/openvpn/forward.c src/openvpn/forward.h src/openvpn/forward-inline.h \
+	src/openvpn/fragment.c src/openvpn/fragment.h \
+	src/openvpn/gremlin.c src/openvpn/gremlin.h \
+	src/openvpn/helper.c src/openvpn/helper.h \
+	src/openvpn/httpdigest.c src/openvpn/httpdigest.h \
+	src/openvpn/lladdr.c src/openvpn/lladdr.h \
+	src/openvpn/init.c src/openvpn/init.h \
+	src/openvpn/integer.h \
+	src/openvpn/interval.c src/openvpn/interval.h \
+	src/openvpn/list.c src/openvpn/list.h \
+	src/openvpn/lzo.c src/openvpn/lzo.h \
+	src/openvpn/manage.c src/openvpn/manage.h \
+	src/openvpn/mbuf.c src/openvpn/mbuf.h \
+	src/openvpn/memdbg.h \
+	src/openvpn/misc.c src/openvpn/misc.h \
+	src/openvpn/mroute.c src/openvpn/mroute.h \
+	src/openvpn/mss.c src/openvpn/mss.h \
+	src/openvpn/mtcp.c src/openvpn/mtcp.h \
+	src/openvpn/mtu.c src/openvpn/mtu.h \
+	src/openvpn/mudp.c src/openvpn/mudp.h \
+	src/openvpn/multi.c src/openvpn/multi.h \
+	src/openvpn/ntlm.c src/openvpn/ntlm.h \
+	src/openvpn/occ.c src/openvpn/occ.h src/openvpn/occ-inline.h \
+	src/openvpn/pkcs11.c src/openvpn/pkcs11.h \
+	src/openvpn/openvpn.c src/openvpn/openvpn.h \
+	src/openvpn/openvpn-plugin.h \
+	src/openvpn/options.c src/openvpn/options.h \
+	src/openvpn/otime.c src/openvpn/otime.h \
+	src/openvpn/packet_id.c src/openvpn/packet_id.h \
+	src/openvpn/perf.c src/openvpn/perf.h \
+	src/openvpn/pf.c pf.h src/openvpn/pf-inline.h \
+	src/openvpn/ping.c src/openvpn/ping.h src/openvpn/ping-inline.h \
+	src/openvpn/plugin.c src/openvpn/plugin.h \
+	src/openvpn/pool.c src/openvpn/pool.h \
+	src/openvpn/proto.c src/openvpn/proto.h \
+	src/openvpn/proxy.c src/openvpn/proxy.h \
+	src/openvpn/ps.c src/openvpn/ps.h \
+	src/openvpn/push.c src/openvpn/push.h \
+	src/openvpn/pushlist.h \
+	src/openvpn/reliable.c src/openvpn/reliable.h \
+	src/openvpn/route.c src/openvpn/route.h \
+	src/openvpn/schedule.c src/openvpn/schedule.h \
+	src/openvpn/session_id.c src/openvpn/session_id.h \
+	src/openvpn/shaper.c src/openvpn/shaper.h \
+	src/openvpn/sig.c src/openvpn/sig.h \
+	src/openvpn/socket.c src/openvpn/socket.h \
+	src/openvpn/socks.c src/openvpn/socks.h \
+	src/openvpn/ssl.c src/openvpn/ssl.h \
+	src/openvpn/status.c src/openvpn/status.h \
+	src/openvpn/syshead.h \
+	src/openvpn/tun.c src/openvpn/tun.h \
+	src/openvpn/win32.h src/openvpn/win32.c \
+	src/openvpn/cryptoapi.h src/openvpn/cryptoapi.c \
+	src/openvpn/missing.c \
 	android.c android.h
 
 common_CFLAGS += -DANDROID_CHANGES
